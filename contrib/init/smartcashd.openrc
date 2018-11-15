@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/smartcoin/.smartcoin" ]; then
+	smartcoinD_DEFAULT_DATADIR="/var/lib/smartcoin/.smartcoin"
+else
+	smartcoinD_DEFAULT_DATADIR="/var/lib/smartcoind"
+fi
+
+smartcoinD_CONFIGFILE=${smartcoinD_CONFIGFILE:-/etc/smartcoin/smartcoin.conf}
+smartcoinD_PIDDIR=${smartcoinD_PIDDIR:-/var/run/smartcoind}
+smartcoinD_PIDFILE=${smartcoinD_PIDFILE:-${smartcoinD_PIDDIR}/smartcoind.pid}
+smartcoinD_DATADIR=${smartcoinD_DATADIR:-${smartcoinD_DEFAULT_DATADIR}}
+smartcoinD_USER=${smartcoinD_USER:-${smartcoin_USER:-smartcoin}}
+smartcoinD_GROUP=${smartcoinD_GROUP:-smartcoin}
+smartcoinD_BIN=${smartcoinD_BIN:-/usr/bin/smartcoind}
+smartcoinD_NICE=${smartcoinD_NICE:-${NICELEVEL:-0}}
+smartcoinD_OPTS="${smartcoinD_OPTS:-${smartcoin_OPTS}}"
+
+name="Bitcoin Core Daemon"
+description="Bitcoin cryptocurrency P2P network daemon"
+
+command="/usr/bin/smartcoind"
+command_args="-pid=\"${smartcoinD_PIDFILE}\" \
+		-conf=\"${smartcoinD_CONFIGFILE}\" \
+		-datadir=\"${smartcoinD_DATADIR}\" \
+		-daemon \
+		${smartcoinD_OPTS}"
+
+required_files="${smartcoinD_CONFIGFILE}"
+start_stop_daemon_args="-u ${smartcoinD_USER} \
+			-N ${smartcoinD_NICE} -w 2000"
+pidfile="${smartcoinD_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${smartcoinD_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${smartcoinD_USER}:${smartcoinD_GROUP}" \
+	"${smartcoinD_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${smartcoinD_USER}:${smartcoinD_GROUP}" \
+	"${smartcoinD_PIDDIR}"
+
+	checkpath -f \
+	-o ${smartcoinD_USER}:${smartcoinD_GROUP} \
+	-m 0660 \
+	${smartcoinD_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${smartcoinD_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run smartcoind."
+		eerror "The setting must appear in ${smartcoinD_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following"
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is also recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"Bitcoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

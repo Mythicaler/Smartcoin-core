@@ -1,0 +1,33 @@
+# /etc/conf.d/smartcoind: config file for /etc/init.d/smartcoind
+
+# Config file location
+#smartcoinD_CONFIGFILE="/etc/smartcoin/smartcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $smartcoinD_USER)
+#smartcoinD_PIDDIR="/var/run/smartcoind"
+
+# What filename to give the pidfile
+#smartcoinD_PIDFILE="${smartcoinD_PIDDIR}/smartcoind.pid"
+
+# Where to write smartcoind data (be mindful that the blockchain is large)
+#smartcoinD_DATADIR="/var/lib/smartcoind"
+
+# User and group to own smartcoind process
+#smartcoinD_USER="smartcoin"
+#smartcoinD_GROUP="smartcoin"
+
+# Path to smartcoind executable
+#smartcoinD_BIN="/usr/bin/smartcoind"
+
+# Nice value to run smartcoind under
+#smartcoinD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+smartcoinD_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for smartcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+smartcoinD_SIGTERM_TIMEOUT=60
