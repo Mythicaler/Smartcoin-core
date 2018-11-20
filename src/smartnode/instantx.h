@@ -27,6 +27,8 @@ extern CInstantSend instantsend;
     (1000/2900.0)**5 = 0.004875397277841433
 */
 static const int INSTANTSEND_CONFIRMATIONS_REQUIRED = 2; // Was 6
+// Want to raise this to 11 (or security of 10 minutes of blocks) 
+// Multiple input mobile wallets are needed before this can work.
 static const int DEFAULT_INSTANTSEND_DEPTH          = 2; // Was 5
 
 static const int MIN_INSTANTSEND_PROTO_VERSION      = 90023;
@@ -120,25 +122,26 @@ class CTxLockRequest : public CTransaction
 {
 private:
     static const int TIMEOUT_SECONDS        = 60;
-    static const CAmount MIN_FEE            = 0.002 * COIN;
+    static const CAmount MIN_FEE            = 0.001 * COIN;
 
     int64_t nTimeCreated;
 
 public:
     static const int WARN_MANY_INPUTS       = 100;
 
-    CTxLockRequest() :		 +    CTxLockRequest() = default;
-         CTransaction(),		 +    CTxLockRequest(const CTransaction& tx) : CTransaction(tx) {};
-         nTimeCreated(GetTime())		
-         {}		
-     CTxLockRequest(const CTransaction& tx) :		
-         CTransaction(tx),		
-         nTimeCreated(GetTime())		
-         {}
+    CTxLockRequest() :
+        CTransaction(),
+        nTimeCreated(GetTime())
+        {}
+    CTxLockRequest(const CTransaction& tx) :
+        CTransaction(tx),
+        nTimeCreated(GetTime())
+        {}
 
     bool IsValid(bool fRequireUnspent = true) const;
     CAmount GetMinFee() const;
     int GetMaxSignatures() const;
+    bool IsTimedOut() const;
     
     explicit operator bool() const
     {
