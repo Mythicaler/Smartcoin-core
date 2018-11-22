@@ -1420,6 +1420,10 @@ bool CheckTransaction(const CTransaction& tx, CValidationState& state, uint256 h
                 if (blockRotation >= 39 && blockRotation <= 94 && output.scriptPubKey == FOUNDER_5_SCRIPT && abs(output.nValue - reward) < 2 ) {
                     found_5 = true;
 	            }
+		// Burn option
+                if (blockRotation >= 39 && blockRotation <= 94 && output.scriptPubKey == FOUNDER_5_SCRIPT && abs(output.nValue - (reward - 200000000000)) < 2 ) {
+                    found_5 = true;
+	            }
               }
               if (!(found_1 || found_2 || found_3 || found_4 || found_5)) {
                 return state.DoS(100, false, REJECT_FOUNDER_REWARD_MISSING,
@@ -1475,7 +1479,7 @@ bool CheckTransaction(const CTransaction& tx, CValidationState& state, uint256 h
     } else {
         
         BOOST_FOREACH(const CTxIn &txin, tx.vin){
-            if (txin.prevout.IsNull() && !txin.scriptSig.IsZerocoinSpend()) {
+            if (txin.prevout.IsNull() && (!txin.scriptSig.IsZerocoinSpend() || nHeight != INT_MAX)) {
                 return state.DoS(10, false, REJECT_INVALID, "bad-txns-prevout-null");
             }
         }
@@ -4348,7 +4352,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, const Consensus::P
             return state.DoS(100, false, REJECT_INVALID, "bad-cb-multiple", false, "more than one coinbase");
 
     int nHeight = getNHeight(block);
-    if(nHeight < 250000){
+    if(nHeight < 266765){
         nHeight = INT_MAX;
     }
     // Check transactions

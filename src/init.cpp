@@ -770,6 +770,11 @@ void InitParameterInteraction()
         if (SoftSetBoolArg("-whitelistrelay", true))
             LogPrintf("%s: parameter interaction: -whitelistforcerelay=1 -> setting -whitelistrelay=1\n", __func__);
     }
+
+    if(!GetBoolArg("-enableinstantsend", fEnableInstantSend)){
+        if (SoftSetArg("-instantsenddepth", 0))
+            LogPrintf("%s: parameter interaction: -enableinstantsend=false -> setting -nInstantSendDepth=0\n", __func__);
+    }
 }
 
 static std::string ResolveErrMsg(const char * const optname, const std::string& strBind)
@@ -1406,7 +1411,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             // first suggest a reindex
             if (!fReset) {
                 bool fRet = uiInterface.ThreadSafeQuestion(
-                    strLoadError + ".\n\n" + _("Do you want to rebuild the block database now?"),
+                    strLoadError + ".\n\n" + _("Do you want to rebuild the block database now?  This can take a significan amount of time and is often faster to remove blocks and chainstate directories and restart wallet"),
                     strLoadError + ".\nPlease restart with -reindex or -reindex-chainstate to recover.",
                     "", CClientUIInterface::MSG_ERROR | CClientUIInterface::BTN_ABORT);
                 if (fRet) {
@@ -1538,7 +1543,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
     LogPrintf("smartnodeConfig.getCount(): %s\n", smartnodeConfig.getCount());
 
     if ((fSmartNode || smartnodeConfig.getCount() > 0) && !fTxIndex) {
-        return InitError("Enabling Smartnode support requires turning on transaction indexing."
+        return InitError("Enabling SmartNode support requires turning on transaction indexing."
                                  "Please add txindex=1 to your configuration and start with -reindex");
     }
 
@@ -1564,7 +1569,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
     }
 
-    LogPrintf("Using Smartnode config file %s\n", GetSmartnodeConfigFile().string());
+#ifdef ENABLE_WALLET
+    LogPrintf("Using SmartNode config file %s\n", GetSmartnodeConfigFile().string());
 
     if (GetBoolArg("-snconflock", true) && pwalletMain && (smartnodeConfig.getCount() > 0)) {
         LOCK(pwalletMain->cs_wallet);
@@ -1597,6 +1603,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
     nPrivateSendRounds = std::min(std::max(nPrivateSendRounds, 2), nLiquidityProvider ? 99999 : 16);
     nPrivateSendAmount = GetArg("-privatesendamount", DEFAULT_PRIVATESEND_AMOUNT);
     nPrivateSendAmount = std::min(std::max(nPrivateSendAmount, 2), 999999);
+#endif // ENABLE_WALLET
 
     fEnableInstantSend = GetBoolArg("-enableinstantsend", 1);
     nInstantSendDepth = GetArg("-instantsenddepth", DEFAULT_INSTANTSEND_DEPTH);
@@ -1609,30 +1616,30 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
     }
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
-    LogPrintf("nInstantSendDepth %d\n", nInstantSendDepth);
-    LogPrintf("PrivateSend rounds %d\n", nPrivateSendRounds);
-    LogPrintf("PrivateSend amount %d\n", nPrivateSendAmount);
+    LogPrintf("InstantPay Depth %d\n", nInstantSendDepth);
+//    LogPrintf("PrivateSend rounds %d\n", nPrivateSendRounds);
+//    LogPrintf("PrivateSend amount %d\n", nPrivateSendAmount);
 
-    darkSendPool.InitDenominations();
+//    darkSendPool.InitDenominations();
 
     // ********************************************************* Step 11b: Load cache data
 
     // LOAD SERIALIZED DAT FILES INTO DATA CACHES FOR INTERNAL USE
 
-    uiInterface.InitMessage(_("Loading smartnode cache..."));
+    uiInterface.InitMessage(_("Loading SmartNode cache..."));
     CFlatDB<CSmartnodeMan> flatdb1("mncache.dat", "magicSmartnodeCache");
     if (!flatdb1.Load(mnodeman)) {
-        return InitError("Failed to load smartnode cache from mncache.dat");
+        return InitError("Failed to load SmartNode cache from mncache.dat");
     }
 
     if (mnodeman.size()) {
-        uiInterface.InitMessage(_("Loading Smartnode payment cache..."));
-        CFlatDB<CSmartnodePayments> flatdb2("mnpayments.dat", "magicSmartnodePaymentsCache");
+        uiInterface.InitMessage(_("Loading SmartNode payment cache..."));
+        CFlatDB<CSmartnodePayments> flatdb2("mnpayments.dat", "magicSmartNodePaymentsCache");
         if (!flatdb2.Load(mnpayments)) {
-            return InitError("Failed to load smartnode payments cache from mnpayments.dat");
+            return InitError("Failed to load SmartNode payments cache from mnpayments.dat");
         }
     } else {
-        uiInterface.InitMessage(_("Smartnode cache is empty, skipping payments and governance cache..."));
+        uiInterface.InitMessage(_("SmartNode cache is empty, skipping payments and governance cache..."));
     }
 
     uiInterface.InitMessage(_("Loading fulfilled requests cache..."));

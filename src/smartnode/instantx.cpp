@@ -50,24 +50,24 @@ void CInstantSend::ProcessMessage(CNode* pfrom, std::string& strCommand, CDataSt
 
     // NOTE: NetMsgType::TXLOCKREQUEST is handled via ProcessMessage() in main.cpp
 
-    if (strCommand == NetMsgType::TXLOCKVOTE) // InstantSend Transaction Lock Consensus Votes
-    {
-        if(pfrom->nVersion < MIN_INSTANTSEND_PROTO_VERSION) return;
+   if (strCommand == NetMsgType::TXLOCKVOTE) // InstantSend Transaction Lock Consensus Votes
+   {
+       if(pfrom->nVersion < MIN_INSTANTSEND_PROTO_VERSION) return;
 
-        CTxLockVote vote;
-        vRecv >> vote;
+       CTxLockVote vote;
+       vRecv >> vote;
 
-        LOCK2(cs_main, cs_instantsend);
+       LOCK2(cs_main, cs_instantsend);
 
-        uint256 nVoteHash = vote.GetHash();
+       uint256 nVoteHash = vote.GetHash();
 
-        if(mapTxLockVotes.count(nVoteHash)) return;
-        mapTxLockVotes.insert(std::make_pair(nVoteHash, vote));
+       if(mapTxLockVotes.count(nVoteHash)) return;
+       mapTxLockVotes.insert(std::make_pair(nVoteHash, vote));
 
-        ProcessTxLockVote(pfrom, vote);
+       ProcessTxLockVote(pfrom, vote);
 
-        return;
-    }
+       return;
+   }
 }
 
 bool CInstantSend::ProcessTxLockRequest(const CTxLockRequest& txLockRequest)
@@ -445,7 +445,7 @@ void CInstantSend::UpdateLockedTransaction(const CTxLockCandidate& txLockCandida
     }
 #endif
 
-//    GetMainSignals().NotifyTransactionLock(txLockCandidate.txLockRequest);
+    GetMainSignals().NotifyTransactionLock(txLockCandidate.txLockRequest);
 
     LogPrint("instantsend", "CInstantSend::UpdateLockedTransaction -- done, txid=%s\n", txHash.ToString());
 }
@@ -759,8 +759,8 @@ bool CInstantSend::IsTxLockCandidateTimedOut(const uint256& txHash)
 
     std::map<uint256, CTxLockCandidate>::iterator itLockCandidate = mapTxLockCandidates.find(txHash);
     if (itLockCandidate != mapTxLockCandidates.end()) {
-        return !itLockCandidate->second.IsAllOutPointsReady() &&
-                itLockCandidate->second.IsTimedOut();
+        return !itLockCandidate->second.IsAllOutPointsReady(); //&&
+//                itLockCandidate->second.IsTimedOut();
     }
 
     return false;
@@ -1077,14 +1077,14 @@ bool CTxLockVote::Sign()
 
 void CTxLockVote::Relay() const
 {
-    CInv inv(MSG_TXLOCK_VOTE, GetHash());
-    RelayInv(inv);
+   CInv inv(MSG_TXLOCK_VOTE, GetHash());
+   RelayInv(inv);
 }
 
 bool CTxLockVote::IsExpired(int nHeight) const
 {
-    // Locks and votes expire nInstantSendKeepLock blocks after the block corresponding tx was included into.
-    return (nConfirmedHeight != -1) && (nHeight - nConfirmedHeight > Params().GetConsensus().nInstantSendKeepLock);
+   //Locks and votes expire nInstantSendKeepLock blocks after the block corresponding tx was included into.
+   return (nConfirmedHeight != -1) && (nHeight - nConfirmedHeight > Params().GetConsensus().nInstantSendKeepLock);
 }
 
 //
@@ -1117,11 +1117,11 @@ bool COutPointLock::HasSmartnodeVoted(const COutPoint& outpointSmartnodeIn) cons
 
 void COutPointLock::Relay() const
 {
-    std::map<COutPoint, CTxLockVote>::const_iterator itVote = mapSmartnodeVotes.begin();
-    while(itVote != mapSmartnodeVotes.end()) {
-        itVote->second.Relay();
-        ++itVote;
-    }
+   std::map<COutPoint, CTxLockVote>::const_iterator itVote = mapSmartnodeVotes.begin();
+   while(itVote != mapSmartnodeVotes.end()) {
+       itVote->second.Relay();
+       ++itVote;
+   }
 }
 
 //
@@ -1173,13 +1173,13 @@ int CTxLockCandidate::CountVotes() const
 
 bool CTxLockCandidate::IsExpired(int nHeight) const
 {
-    // Locks and votes expire nInstantSendKeepLock blocks after the block corresponding tx was included into.
-    return (nConfirmedHeight != -1) && (nHeight - nConfirmedHeight > Params().GetConsensus().nInstantSendKeepLock);
+   // Locks and votes expire nInstantSendKeepLock blocks after the block corresponding tx was included into.
+   return (nConfirmedHeight != -1) && (nHeight - nConfirmedHeight > Params().GetConsensus().nInstantSendKeepLock);
 }
 
 bool CTxLockCandidate::IsTimedOut() const
 {
-    return GetTime() - nTimeCreated > INSTANTSEND_LOCK_TIMEOUT_SECONDS;
+   return GetTime() - nTimeCreated > INSTANTSEND_LOCK_TIMEOUT_SECONDS;
 }
 
 void CTxLockCandidate::Relay() const
