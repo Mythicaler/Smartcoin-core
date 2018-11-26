@@ -96,7 +96,7 @@ bool IsBlockValueValid(const CBlock &block, int nBlockHeight, CAmount blockRewar
 
     // we are synced, let's try to check as much data as we can
 
-    if (sporkManager.IsSporkActive(SPORK_9_SUPERBLOCKS_ENABLED)) {
+//    if (sporkManager.IsSporkActive(SPORK_9_SUPERBLOCKS_ENABLED)) {
 ////        if(CSuperblockManager::IsSuperblockTriggered(nBlockHeight)) {
 ////            if(CSuperblockManager::IsValid(block.vtx[0], nBlockHeight, blockReward)) {
 ////                LogPrint("gobject", "IsBlockValueValid -- Valid superblock at height %d: %s", nBlockHeight, block.vtx[0].ToString());
@@ -115,7 +115,7 @@ bool IsBlockValueValid(const CBlock &block, int nBlockHeight, CAmount blockRewar
 //            strErrorRet = strprintf("coinbase pays too much at height %d (actual=%d vs limit=%d), exceeded block reward, no triggered superblock detected",
 //                                    nBlockHeight, block.vtx[0].GetValueOut(), blockReward);
 //        }
-    } else {
+/*    } else {
 //        // should NOT allow superblocks at all, when superblocks are disabled
         LogPrint("gobject", "IsBlockValueValid -- Superblocks are disabled, no superblocks allowed\n");
         if (!isBlockRewardValueMet) {
@@ -123,7 +123,7 @@ bool IsBlockValueValid(const CBlock &block, int nBlockHeight, CAmount blockRewar
                                     nBlockHeight, block.vtx[0].GetValueOut(), blockReward);
         }
     }
-
+*/
     // it MUST be a regular block
     return isBlockRewardValueMet;
 }
