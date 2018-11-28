@@ -276,7 +276,7 @@ static const CRPCCommand vRPCCommands[] =
     { "smartcoin",          "snsync",                 &snsync,                 true  },
     { "smartcoin",          "smartnodelist",          &smartnodelist,          true  }, 
     { "smartcoin",          "smartnodebroadcast",     &smartnodebroadcast,     true  }, 
-    { "smartcoin",          "getpoolinfo",            &getpoolinfo,            true  },
+    //{ "smartcoin",          "getpoolinfo",            &getpoolinfo,            true  },
 };
 
 CRPCTable::CRPCTable()
