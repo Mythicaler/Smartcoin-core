@@ -150,8 +150,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a smartcoin address</source>
-        <translation>Enviar monedas a una dirección smartcoin</translation>
+        <source>Send coins to a Smartcash address</source>
+        <translation>Enviar monedas a una dirección SmartCash</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -174,8 +174,8 @@
         <translation>&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>smartcoin</source>
-        <translation>smartcoin</translation>
+        <source>SmartCash</source>
+        <translation>SmartCash</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -416,8 +416,8 @@
         <translation>Mensaje:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the smartcoin network.</source>
-        <translation>Mensaje opcional para agregar a la solicitud de pago, el cual será mostrado cuando la solicitud este abierta. Nota: El mensaje no se manda con el pago a travéz de la red de smartcoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Smartcash network.</source>
+        <translation>Mensaje opcional para agregar a la solicitud de pago, el cual será mostrado cuando la solicitud este abierta. Nota: El mensaje no se manda con el pago a travéz de la red de SmartCash.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -602,8 +602,8 @@
         <translation>Opciones:</translation>
     </message>
     <message>
-        <source>smartcoin Core</source>
-        <translation>nucleo smartcoin</translation>
+        <source>Smartcash Core</source>
+        <translation>nucleo SmartCash</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>

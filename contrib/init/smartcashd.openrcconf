@@ -1,33 +1,33 @@
-# /etc/conf.d/smartcoind: config file for /etc/init.d/smartcoind
+# /etc/conf.d/smartcashd: config file for /etc/init.d/smartcashd
 
 # Config file location
-#smartcoinD_CONFIGFILE="/etc/smartcoin/smartcoin.conf"
+#SMARTCASHD_CONFIGFILE="/etc/smartcash/smartcash.conf"
 
-# What directory to write pidfile to?  (created and owned by $smartcoinD_USER)
-#smartcoinD_PIDDIR="/var/run/smartcoind"
+# What directory to write pidfile to?  (created and owned by $SMARTCASHD_USER)
+#SMARTCASHD_PIDDIR="/var/run/smartcashd"
 
 # What filename to give the pidfile
-#smartcoinD_PIDFILE="${smartcoinD_PIDDIR}/smartcoind.pid"
+#SMARTCASHD_PIDFILE="${SMARTCASHD_PIDDIR}/smartcashd.pid"
 
-# Where to write smartcoind data (be mindful that the blockchain is large)
-#smartcoinD_DATADIR="/var/lib/smartcoind"
+# Where to write smartcashd data (be mindful that the blockchain is large)
+#SMARTCASHD_DATADIR="/var/lib/smartcashd"
 
-# User and group to own smartcoind process
-#smartcoinD_USER="smartcoin"
-#smartcoinD_GROUP="smartcoin"
+# User and group to own smartcashd process
+#SMARTCASHD_USER="smartcash"
+#SMARTCASHD_GROUP="smartcash"
 
-# Path to smartcoind executable
-#smartcoinD_BIN="/usr/bin/smartcoind"
+# Path to smartcashd executable
+#SMARTCASHD_BIN="/usr/bin/smartcashd"
 
-# Nice value to run smartcoind under
-#smartcoinD_NICE=0
+# Nice value to run smartcashd under
+#SMARTCASHD_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)
-smartcoinD_OPTS="-disablewallet"
+SMARTCASHD_OPTS="-disablewallet"
 
-# The timeout in seconds OpenRC will wait for smartcoind to terminate
+# The timeout in seconds OpenRC will wait for smartcashd to terminate
 # after a SIGTERM has been raised.
 # Note that this will be mapped as argument to start-stop-daemon's
 # '--retry' option, which means you can specify a retry schedule
 # here. For more information see man 8 start-stop-daemon.
-smartcoinD_SIGTERM_TIMEOUT=60
+SMARTCASHD_SIGTERM_TIMEOUT=60

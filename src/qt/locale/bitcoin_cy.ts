@@ -490,7 +490,7 @@
         <translation>Opsiynau:</translation>
     </message>
     <message>
-        <source>smartcoin Core</source>
+        <source>Smartcash Core</source>
         <translation>Craidd Bitcoin</translation>
     </message>
     <message>

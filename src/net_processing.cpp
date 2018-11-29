@@ -46,7 +46,7 @@
 using namespace std;
 
 #if defined(NDEBUG)
-# error "smartcoin Core cannot be compiled without assertions."
+# error "Smartcash Core cannot be compiled without assertions."
 #endif
 
 int64_t nTimeBestReceived = 0; // Used only to inform the wallet of when we last received a block
@@ -705,7 +705,7 @@ bool static AlreadyHave(const CInv& inv) EXCLUSIVE_LOCKS_REQUIRED(cs_main)
         return mapBlockIndex.count(inv.hash);
 
     /* 
-        smartcoin Related Inventory Messages
+        Smartcash Related Inventory Messages
 
         --
 
@@ -765,7 +765,7 @@ static void RelayAddress(const CAddress& addr, bool fReachable, CConnman& connma
         hashSalt = GetRandHash();
     uint64_t hashAddr = addr.GetHash();
     uint256 hashRand = ArithToUint256(UintToArith256(hashSalt) ^ (hashAddr<<32) ^ ((GetTime()+hashAddr)/(24*60*60)));
-    hashRand = Hash(BEGIN(hashRand), END(hashRand));
+    hashRand = HashKeccak(BEGIN(hashRand), END(hashRand));
     std::multimap<uint256, CNode*> mapMix;
 
     auto sortfunc = [&mapMix, &hashRand](CNode* pnode) {
@@ -773,7 +773,7 @@ static void RelayAddress(const CAddress& addr, bool fReachable, CConnman& connma
             unsigned int nPointer;
             memcpy(&nPointer, &pnode, sizeof(nPointer));
             uint256 hashKey = ArithToUint256(UintToArith256(hashRand) ^ nPointer);
-            hashKey = Hash(BEGIN(hashKey), END(hashKey));
+            hashKey = HashKeccak(BEGIN(hashKey), END(hashKey));
             mapMix.emplace(hashKey, pnode);
         }
     };
@@ -2252,7 +2252,7 @@ bool ProcessMessages(CNode* pfrom, CConnman& connman, std::atomic<bool>& interru
 
         // Checksum
         CDataStream& vRecv = msg.vRecv;
-        uint256 hash = Hash(vRecv.begin(), vRecv.begin() + nMessageSize);
+        uint256 hash = HashKeccak(vRecv.begin(), vRecv.begin() + nMessageSize);
         if (memcmp(hash.begin(), hdr.pchChecksum, CMessageHeader::CHECKSUM_SIZE) != 0)
         {
             LogPrintf("%s(%s, %u bytes): CHECKSUM ERROR expected %s was %s\n", __func__,

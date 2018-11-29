@@ -1,15 +1,15 @@
 [Unit]
-Description=smartcoin's distributed currency daemon
+Description=Smartcash's distributed currency daemon
 After=network.target
 
 [Service]
-User=smartcoin
-Group=smartcoin
+User=smartcash
+Group=smartcash
 
 Type=forking
-PIDFile=/var/lib/smartcoind/smartcoind.pid
-ExecStart=/usr/bin/smartcoind -daemon -pid=/var/lib/smartcoind/smartcoind.pid \
--conf=/etc/smartcoin/smartcoin.conf -datadir=/var/lib/smartcoind -disablewallet
+PIDFile=/var/lib/smartcashd/smartcashd.pid
+ExecStart=/usr/bin/smartcashd -daemon -pid=/var/lib/smartcashd/smartcashd.pid \
+-conf=/etc/smartcash/smartcash.conf -datadir=/var/lib/smartcashd -disablewallet
 
 Restart=always
 PrivateTmp=true

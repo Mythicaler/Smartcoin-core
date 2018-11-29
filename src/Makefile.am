@@ -26,7 +26,7 @@ BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
 LIBBITCOIN_SERVER=libbitcoin_server.a
 LIBBITCOIN_COMMON=libbitcoin_common.a
-LIBsmartcoin_CONSENSUS=libsmartcoin_consensus.a
+LIBSMARTCASH_CONSENSUS=libsmartcash_consensus.a
 LIBBITCOIN_CLI=libbitcoin_cli.a
 LIBBITCOIN_UTIL=libbitcoin_util.a
 LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
@@ -37,7 +37,7 @@ if ENABLE_ZMQ
 LIBBITCOIN_ZMQ=libbitcoin_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBsmartcoinCONSENSUS=libsmartcoinconsensus.la
+LIBSMARTCASHCONSENSUS=libsmartcashconsensus.la
 endif
 if ENABLE_WALLET
 LIBBITCOIN_WALLET=libbitcoin_wallet.a
@@ -52,24 +52,24 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_COMMON) \
-  $(LIBsmartcoin_CONSENSUS) \
+  $(LIBSMARTCASH_CONSENSUS) \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_ZMQ)
 
-lib_LTLIBRARIES = $(LIBsmartcoinCONSENSUS)
+lib_LTLIBRARIES = $(LIBSMARTCASHCONSENSUS)
 
 bin_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += smartcoind
+  bin_PROGRAMS += smartcashd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += smartcoin-cli smartcoin-tx
+  bin_PROGRAMS += smartcash-cli smartcash-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -294,9 +294,9 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_types.h
 
 # consensus: shared between all executables that validate any consensus rules.
-libsmartcoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libsmartcoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libsmartcoin_consensus_a_SOURCES = \
+libsmartcash_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libsmartcash_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libsmartcash_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
@@ -313,7 +313,7 @@ libsmartcoin_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/smartcoinconsensus.cpp \
+  script/smartcashconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -418,83 +418,83 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-smartcoind_SOURCES = bitcoind.cpp
-smartcoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-smartcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-smartcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+smartcashd_SOURCES = bitcoind.cpp
+smartcashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+smartcashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+smartcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-smartcoind_SOURCES += bitcoind-res.rc
+smartcashd_SOURCES += bitcoind-res.rc
 endif
 
-smartcoind_LDADD = \
+smartcashd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_ZMQ) \
-  $(LIBsmartcoin_CONSENSUS) \
+  $(LIBSMARTCASH_CONSENSUS) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-smartcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+smartcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # bitcoin-cli binary #
-smartcoin_cli_SOURCES = bitcoin-cli.cpp
-smartcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-smartcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-smartcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+smartcash_cli_SOURCES = bitcoin-cli.cpp
+smartcash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+smartcash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+smartcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-smartcoin_cli_SOURCES += bitcoin-cli-res.rc
+smartcash_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-smartcoin_cli_LDADD = \
+smartcash_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-smartcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+smartcash_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
-smartcoin_tx_SOURCES = bitcoin-tx.cpp
-smartcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-smartcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-smartcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+smartcash_tx_SOURCES = bitcoin-tx.cpp
+smartcash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+smartcash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+smartcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-smartcoin_tx_SOURCES += bitcoin-tx-res.rc
+smartcash_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-smartcoin_tx_LDADD = \
+smartcash_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
-  $(LIBsmartcoin_CONSENSUS) \
+  $(LIBSMARTCASH_CONSENSUS) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-smartcoin_tx_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) 
+smartcash_tx_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) 
 #
 
-# smartcoinconsensus library #
+# smartcashconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/smartcoinconsensus.h
-libsmartcoinconsensus_la_SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) $(libsmartcoin_consensus_a_SOURCES)
+include_HEADERS = script/smartcashconsensus.h
+libsmartcashconsensus_la_SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) $(libsmartcash_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libsmartcoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libsmartcashconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libsmartcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libsmartcoinconsensus_la_LIBADD = $(LIBSECP256K1) $(SSL_LIBS) $(CRYPTO_LIBS)
-libsmartcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libsmartcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libsmartcashconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libsmartcashconsensus_la_LIBADD = $(LIBSECP256K1) $(SSL_LIBS) $(CRYPTO_LIBS)
+libsmartcashconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libsmartcashconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

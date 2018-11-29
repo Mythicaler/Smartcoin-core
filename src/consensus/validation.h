@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef smartcoin_CONSENSUS_VALIDATION_H
-#define smartcoin_CONSENSUS_VALIDATION_H
+#ifndef SMARTCASH_CONSENSUS_VALIDATION_H
+#define SMARTCASH_CONSENSUS_VALIDATION_H
 
 #include <string>
 
@@ -92,4 +92,4 @@ public:
     std::string GetDebugMessage() const { return strDebugMessage; }
 };
 
-#endif // smartcoin_CONSENSUS_VALIDATION_H
+#endif // SMARTCASH_CONSENSUS_VALIDATION_H

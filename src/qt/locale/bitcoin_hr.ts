@@ -54,8 +54,8 @@
         <translation>&amp;Odaberi</translation>
     </message>
     <message>
-        <source>These are your smartcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su vaše smartcoin adrese za slanje novca. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
+        <source>These are your Smartcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su vaše Smartcash adrese za slanje novca. Uvijek provjerite iznos i adresu primatelja prije slanja novca.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -174,8 +174,8 @@
         <translation>Re-indeksiranje blokova na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a smartcoin address</source>
-        <translation>Slanje novca na smartcoin adresu</translation>
+        <source>Send coins to a Smartcash address</source>
+        <translation>Slanje novca na Smartcash adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -226,12 +226,12 @@
         <translation>Šifriranje privatnih ključeva koji u novčaniku</translation>
     </message>
     <message>
-        <source>Sign messages with your smartcoin addresses to prove you own them</source>
-        <translation>Poruku potpišemo s smartcoin adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
+        <source>Sign messages with your Smartcash addresses to prove you own them</source>
+        <translation>Poruku potpišemo s Smartcash adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified smartcoin addresses</source>
-        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom smartcoin adresom</translation>
+        <source>Verify messages to ensure they were signed with specified Smartcash addresses</source>
+        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom Smartcash adresom</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -250,8 +250,8 @@
         <translation>Traka kartica</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and smartcoin: URIs)</source>
-        <translation>Zatraži uplatu (stvara QR kod i smartcoin: URI adresu)</translation>
+        <source>Request payments (generates QR codes and smartcash: URIs)</source>
+        <translation>Zatraži uplatu (stvara QR kod i smartcash: URI adresu)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -262,16 +262,16 @@
         <translation>Prikaži popis korištenih adresa i oznaka za primanje novca</translation>
     </message>
     <message>
-        <source>Open a smartcoin: URI or payment request</source>
-        <translation>Otvori smartcoin: URI adresu ili zahtjev za uplatu</translation>
+        <source>Open a smartcash: URI or payment request</source>
+        <translation>Otvori smartcash: URI adresu ili zahtjev za uplatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opcije &amp;naredbene linije</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to smartcoin network</source>
-        <translation><numerusform>%n aktivna veza na smartcoin mrežu</numerusform><numerusform>%n aktivnih veza na smartcoin mrežu</numerusform><numerusform>%n aktivnih veza na smartcoin mrežu</numerusform></translation>
+        <source>%n active connection(s) to Smartcash network</source>
+        <translation><numerusform>%n aktivna veza na Smartcash mrežu</numerusform><numerusform>%n aktivnih veza na Smartcash mrežu</numerusform><numerusform>%n aktivnih veza na Smartcash mrežu</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -451,11 +451,11 @@
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Oznaka smartcoin adrese</translation>
+        <translation>Oznaka Smartcash adrese</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation>smartcoin adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
+        <translation>Smartcash adresa. Izmjene adrese su moguće samo za adrese za slanje.</translation>
     </message>
     <message>
         <source>&amp;Address</source>
@@ -585,8 +585,8 @@
         <translation>&amp;Trošenje nepotvrđenih vraćenih iznosa</translation>
     </message>
     <message>
-        <source>Automatically open the smartcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvori port smartcoin klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
+        <source>Automatically open the Smartcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvori port Smartcash klijenta na ruteru. To radi samo ako ruter podržava UPnP i ako je omogućen.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -660,8 +660,8 @@
         <translation>Oblik</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the smartcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Prikazani podatci mogu biti zastarjeli. Vaš novčanik se automatski sinkronizira s smartcoin mrežom kada je veza uspostavljena, ali taj proces još nije završen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Smartcash network after a connection is established, but this process has not completed yet.</source>
+        <translation>Prikazani podatci mogu biti zastarjeli. Vaš novčanik se automatski sinkronizira s Smartcash mrežom kada je veza uspostavljena, ali taj proces još nije završen.</translation>
     </message>
     <message>
         <source>Total:</source>
@@ -1048,8 +1048,8 @@
         <translation>Izvršavaj u pozadini kao uslužnik i prihvaćaj komande</translation>
     </message>
     <message>
-        <source>smartcoin Core</source>
-        <translation>smartcoin Core</translation>
+        <source>Smartcash Core</source>
+        <translation>Smartcash Core</translation>
     </message>
     <message>
         <source>Block creation options:</source>

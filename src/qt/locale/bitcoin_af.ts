@@ -158,8 +158,8 @@
         <translation>Besig met herindeksering van blokke op hardeskyf...</translation>
     </message>
     <message>
-        <source>Send coins to a smartcoin address</source>
-        <translation>Stuur munte na 'n smartcoin adres</translation>
+        <source>Send coins to a Smartcash address</source>
+        <translation>Stuur munte na 'n Smartcash adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -170,8 +170,8 @@
         <translation>Verander die wagwoord wat ek vir kodifikasie van my beursie gebruik</translation>
     </message>
     <message>
-        <source>smartcoin</source>
-        <translation>smartcoin</translation>
+        <source>SmartCash</source>
+        <translation>SmartCash</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -194,12 +194,12 @@
         <translation>Kodifiseer die private sleutes wat aan jou beursie gekoppel is.</translation>
     </message>
     <message>
-        <source>Sign messages with your smartcoin addresses to prove you own them</source>
-        <translation>Onderteken boodskappe met u smartcoin adresse om u eienaarskap te bewys</translation>
+        <source>Sign messages with your Smartcash addresses to prove you own them</source>
+        <translation>Onderteken boodskappe met u Smartcash adresse om u eienaarskap te bewys</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified smartcoin addresses</source>
-        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde smartcoin adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Smartcash addresses</source>
+        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Smartcash adresse</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -210,8 +210,8 @@
         <translation>Orebalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and smartcoin: URIs)</source>
-        <translation>Versoek betalings (genereer QR-kodes en smartcoin: URI's)</translation>
+        <source>Request payments (generates QR codes and smartcash: URIs)</source>
+        <translation>Versoek betalings (genereer QR-kodes en smartcash: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -222,8 +222,8 @@
         <translation>Vertoon die lys van gebruikte ontvangers-adresse en etikette</translation>
     </message>
     <message>
-        <source>Open a smartcoin: URI or payment request</source>
-        <translation>Skep 'n smartcoin: URI of betalingsversoek</translation>
+        <source>Open a smartcash: URI or payment request</source>
+        <translation>Skep 'n smartcash: URI of betalingsversoek</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -710,8 +710,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>smartcoin Core</source>
-        <translation>smartcoin Kern</translation>
+        <source>Smartcash Core</source>
+        <translation>Smartcash Kern</translation>
     </message>
     <message>
         <source>Information</source>

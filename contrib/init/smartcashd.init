@@ -1,36 +1,36 @@
 #!/bin/bash
 #
-#  smartcoind The smartcoin core server.
+#  smartcashd The smartcash core server.
 #
 #
 # chkconfig: 345 80 20
-# description: smartcoind
-# processname: smartcoind
+# description: smartcashd
+# processname: smartcashd
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/smartcoind, see below
-if [ -f /etc/sysconfig/smartcoind ]; then
-        . /etc/sysconfig/smartcoind
+# you can override defaults in /etc/sysconfig/smartcashd, see below
+if [ -f /etc/sysconfig/smartcashd ]; then
+        . /etc/sysconfig/smartcashd
 fi
 
 RETVAL=0
 
-prog=smartcoind
-# you can override the lockfile via smartcoinD_LOCKFILE in /etc/sysconfig/smartcoind
-lockfile=${smartcoinD_LOCKFILE-/var/lock/subsys/smartcoind}
+prog=smartcashd
+# you can override the lockfile via SMARTCASHD_LOCKFILE in /etc/sysconfig/smartcashd
+lockfile=${SMARTCASHD_LOCKFILE-/var/lock/subsys/smartcashd}
 
-# smartcoind defaults to /usr/bin/smartcoind, override with smartcoinD_BIN
-smartcoind=${smartcoinD_BIN-/usr/bin/smartcoind}
+# smartcashd defaults to /usr/bin/smartcashd, override with SMARTCASHD_BIN
+smartcashd=${SMARTCASHD_BIN-/usr/bin/smartcashd}
 
-# smartcoind opts default to -disablewallet, override with smartcoinD_OPTS
-smartcoind_opts=${smartcoinD_OPTS--disablewallet}
+# smartcashd opts default to -disablewallet, override with SMARTCASHD_OPTS
+smartcashd_opts=${SMARTCASHD_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $smartcoind $smartcoind_opts
+    daemon $DAEMONOPTS $smartcashd $smartcashd_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile

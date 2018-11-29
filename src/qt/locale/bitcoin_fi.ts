@@ -166,8 +166,8 @@
         <translation>Ladataan lohkoindeksiä...</translation>
     </message>
     <message>
-        <source>Send coins to a smartcoin address</source>
-        <translation>Lähetä kolikoita smartcoin-osoitteeseen</translation>
+        <source>Send coins to a Smartcash address</source>
+        <translation>Lähetä kolikoita SmartCash-osoitteeseen</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -190,8 +190,8 @@
         <translation>Varmista &amp;viesti...</translation>
     </message>
     <message>
-        <source>smartcoin</source>
-        <translation>smartcoin</translation>
+        <source>SmartCash</source>
+        <translation>SmartCash</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -211,19 +211,19 @@
     </message>
     <message>
         <source>Show or hide the main Window</source>
-        <translation>Näytä tai piilota smartcoin-ikkuna</translation>
+        <translation>Näytä tai piilota SmartCash-ikkuna</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
         <translation>Suojaa yksityiset avaimet, jotka kuuluvat lompakkoosi</translation>
     </message>
     <message>
-        <source>Sign messages with your smartcoin addresses to prove you own them</source>
-        <translation>Allekirjoita viestisi omalla smartcoin -osoitteellasi todistaaksesi, että omistat ne</translation>
+        <source>Sign messages with your Smartcash addresses to prove you own them</source>
+        <translation>Allekirjoita viestisi omalla Smartcash -osoitteellasi todistaaksesi, että omistat ne</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified smartcoin addresses</source>
-        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä smartcoin -osoitteella</translation>
+        <source>Verify messages to ensure they were signed with specified Smartcash addresses</source>
+        <translation>Varmista, että viestisi on allekirjoitettu määritetyllä Smartcash -osoitteella</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -242,8 +242,8 @@
         <translation>Välilehtipalkki</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and smartcoin: URIs)</source>
-        <translation>Pyydä maksuja (Luo QR koodit ja smartcoin: URIt)</translation>
+        <source>Request payments (generates QR codes and smartcash: URIs)</source>
+        <translation>Pyydä maksuja (Luo QR koodit ja smartcash: URIt)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -254,16 +254,16 @@
         <translation>Näytä vastaanottamiseen käytettyjen osoitteiden ja nimien lista</translation>
     </message>
     <message>
-        <source>Open a smartcoin: URI or payment request</source>
-        <translation>Avaa smartcoin: URI tai maksupyyntö</translation>
+        <source>Open a smartcash: URI or payment request</source>
+        <translation>Avaa smartcash: URI tai maksupyyntö</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Komentorivin valinnat</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to smartcoin network</source>
-        <translation><numerusform>%n aktiivinen yhteys smartcoin-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä smartcoin-verkkoon</numerusform></translation>
+        <source>%n active connection(s) to Smartcash network</source>
+        <translation><numerusform>%n aktiivinen yhteys SmartCash-verkkoon</numerusform><numerusform>%n aktiivista yhteyttä SmartCash-verkkoon</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -330,8 +330,8 @@
         <translation>Rahansiirtohistoria on ajan tasalla</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible smartcoin command-line options</source>
-        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista smartcoinin komentorivivalinnoista</translation>
+        <source>Show the %1 help message to get a list with possible Smartcash command-line options</source>
+        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista SmartCashin komentorivivalinnoista</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -583,8 +583,8 @@
         <translation>Tämä on ensimmäinen kerta, kun %1 on käynnistetty, joten voit valita data-hakemiston paikan.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the smartcoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 lataa ja tallentaa kopion smartcoinin lohkoketjusta. Vähintään %2Gt dataa tullaan tallentamaan tähän hakemistoon, ja tarve kasvaa ajan myötä. Lompakko tullaan myös tallentamaan tähän hakemistoon.</translation>
+        <source>%1 will download and store a copy of the Smartcash block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>%1 lataa ja tallentaa kopion SmartCashin lohkoketjusta. Vähintään %2Gt dataa tullaan tallentamaan tähän hakemistoon, ja tarve kasvaa ajan myötä. Lompakko tullaan myös tallentamaan tähän hakemistoon.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -725,16 +725,16 @@
         <translation>&amp;Käytä varmistamattomia vaihtorahoja</translation>
     </message>
     <message>
-        <source>Automatically open the smartcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Avaa smartcoin-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
+        <source>Automatically open the Smartcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Avaa SmartCash-asiakasohjelman portti reitittimellä automaattisesti. Tämä toimii vain, jos reitittimesi tukee UPnP:tä ja se on käytössä.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Portin uudelleenohjaus &amp;UPnP:llä</translation>
     </message>
     <message>
-        <source>Connect to the smartcoin network through a SOCKS5 proxy.</source>
-        <translation>Yhdistä smartcoin-verkkoon SOCKS5-välityspalvelimen kautta.</translation>
+        <source>Connect to the Smartcash network through a SOCKS5 proxy.</source>
+        <translation>Yhdistä SmartCash-verkkoon SOCKS5-välityspalvelimen kautta.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -773,8 +773,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the smartcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Yhdistä smartcoin-verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
+        <source>Connect to the Smartcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Yhdistä SmartCash-verkkoon erillisen SOCKS5-välityspalvelimen kautta piilotettuja Tor-palveluja varten.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
@@ -810,11 +810,11 @@
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>Yksikkö jona smartcoin-määrät näytetään</translation>
+        <translation>Yksikkö jona SmartCash-määrät näytetään</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Valitse mitä yksikköä käytetään ensisijaisesti smartcoin-määrien näyttämiseen.</translation>
+        <translation>Valitse mitä yksikköä käytetään ensisijaisesti SmartCash-määrien näyttämiseen.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -864,8 +864,8 @@
         <translation>Lomake</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the smartcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu smartcoin-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Smartcash network after a connection is established, but this process has not completed yet.</source>
+        <translation>Näytetyt tiedot eivät välttämättä ole ajantasalla. Lompakkosi synkronoituu SmartCash-verkon kanssa automaattisesti yhteyden muodostamisen jälkeen, mutta synkronointi on vielä meneillään.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -905,7 +905,7 @@
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Tililläsi tällä hetkellä olevien smartcoinien määrä</translation>
+        <translation>Tililläsi tällä hetkellä olevien SmartCashien määrä</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -957,8 +957,8 @@
         <translation>Määrä</translation>
     </message>
     <message>
-        <source>Enter a smartcoin address (e.g. %1)</source>
-        <translation>Syötä smartcoin-osoite (esim. %1)</translation>
+        <source>Enter a Smartcash address (e.g. %1)</source>
+        <translation>Syötä SmartCash-osoite (esim. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1302,8 +1302,8 @@
         <translation>&amp;Uudelleenkäytä vastaanotto-osoitetta (ei suositella)</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the smartcoin network.</source>
-        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä smartcoin-verkkoon.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Smartcash network.</source>
+        <translation>Valinnainen viesti liitetään maksupyyntöön ja näytetään avattaessa. Viestiä ei lähetetä SmartCash-verkkoon.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1376,7 +1376,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Lähetä smartcoineja</translation>
+        <translation>Lähetä SmartCasheja</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -1538,8 +1538,8 @@
         <translation>Tämä on normaali maksu.</translation>
     </message>
     <message>
-        <source>The smartcoin address to send the payment to</source>
-        <translation>smartcoin-osoite johon maksu lähetetään</translation>
+        <source>The Smartcash address to send the payment to</source>
+        <translation>SmartCash-osoite johon maksu lähetetään</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1558,8 +1558,8 @@
         <translation>Poista tämä alkio</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less smartcoin than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Kulu vähennetään lähetettävästä määrästä. Saaja vastaanottaa vähemmän smartcoineja kuin merkitset Määrä-kenttään. Jos saajia on monia, kulu jaetaan tasan.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less SmartCash than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Kulu vähennetään lähetettävästä määrästä. Saaja vastaanottaa vähemmän SmartCasheja kuin merkitset Määrä-kenttään. Jos saajia on monia, kulu jaetaan tasan.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1582,8 +1582,8 @@
         <translation>Aseta nimi tälle osoitteelle lisätäksesi sen käytettyjen osoitteiden listalle.</translation>
     </message>
     <message>
-        <source>A message that was attached to the smartcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the smartcoin network.</source>
-        <translation>Viesti joka liitettiin smartcoin: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä smartcoin-verkkoon.</translation>
+        <source>A message that was attached to the smartcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Smartcash network.</source>
+        <translation>Viesti joka liitettiin smartcash: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä SmartCash-verkkoon.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1619,8 +1619,8 @@
         <translation>&amp;Allekirjoita viesti</translation>
     </message>
     <message>
-        <source>The smartcoin address to sign the message with</source>
-        <translation>smartcoin-osoite jolla viesti allekirjoitetaan</translation>
+        <source>The Smartcash address to sign the message with</source>
+        <translation>SmartCash-osoite jolla viesti allekirjoitetaan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1651,8 +1651,8 @@
         <translation>Kopioi tämänhetkinen allekirjoitus leikepöydälle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this smartcoin address</source>
-        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän smartcoin-osoitteen</translation>
+        <source>Sign the message to prove you own this Smartcash address</source>
+        <translation>Allekirjoita viesti todistaaksesi, että omistat tämän SmartCash-osoitteen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1671,12 +1671,12 @@
         <translation>&amp;Varmista viesti</translation>
     </message>
     <message>
-        <source>The smartcoin address the message was signed with</source>
-        <translation>smartcoin-osoite jolla viesti on allekirjoitettu</translation>
+        <source>The Smartcash address the message was signed with</source>
+        <translation>SmartCash-osoite jolla viesti on allekirjoitettu</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified smartcoin address</source>
-        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä smartcoin-osoitteella</translation>
+        <source>Verify the message to ensure it was signed with the specified Smartcash address</source>
+        <translation>Tarkista viestin allekirjoitus varmistaaksesi, että se allekirjoitettiin tietyllä SmartCash-osoitteella</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1800,8 +1800,8 @@
         <translation>Hyväksy yhteyksiä ulkopuolelta (vakioasetus: 1 jos -proxy tai -connect ei määritelty)</translation>
     </message>
     <message>
-        <source>smartcoin Core</source>
-        <translation>smartcoin-ydin</translation>
+        <source>Smartcash Core</source>
+        <translation>SmartCash-ydin</translation>
     </message>
     <message>
         <source>The %s developers</source>

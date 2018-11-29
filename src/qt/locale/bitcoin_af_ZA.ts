@@ -78,8 +78,8 @@
         <translation>&amp;Opsies</translation>
     </message>
     <message>
-        <source>smartcoin</source>
-        <translation>smartcoin</translation>
+        <source>SmartCash</source>
+        <translation>SmartCash</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -318,8 +318,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>smartcoin Core</source>
-        <translation>smartcoin Core</translation>
+        <source>SmartCash Core</source>
+        <translation>SmartCash Core</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>

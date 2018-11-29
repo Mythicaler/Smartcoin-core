@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef smartcoin_BIP39_H
-#define smartcoin_BIP39_H
+#ifndef SMARTCASH_BIP39_H
+#define SMARTCASH_BIP39_H
 
 #include "support/allocators/secure.h"
 

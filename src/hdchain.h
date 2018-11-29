@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef smartcoin_HDCHAIN_H
-#define smartcoin_HDCHAIN_H
+#ifndef SMARTCASH_HDCHAIN_H
+#define SMARTCASH_HDCHAIN_H
 
 #include "key.h"
 #include "sync.h"
@@ -149,4 +149,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // smartcoin_HDCHAIN_H
+#endif // SMARTCASH_HDCHAIN_H
