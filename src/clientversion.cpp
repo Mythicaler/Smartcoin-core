@@ -45,8 +45,8 @@ const std::string CLIENT_NAME("smartcoin Core");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "d48703f"
-#define GIT_COMMIT_DATE "Fri, 2 Feb 2018 00:14:43 -0300"
+#define GIT_COMMIT_ID "9b0d8d7"
+#define GIT_COMMIT_DATE "Fri, 2 Feb 2018 01:05:48 -0300"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
