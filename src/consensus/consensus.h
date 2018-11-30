@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SMARTCASH_CONSENSUS_CONSENSUS_H
-#define SMARTCASH_CONSENSUS_CONSENSUS_H
+#ifndef smartcoin_CONSENSUS_CONSENSUS_H
+#define smartcoin_CONSENSUS_CONSENSUS_H
 
 #include <stdint.h>
 
@@ -36,4 +36,4 @@ enum {
     LOCKTIME_MEDIAN_TIME_PAST = (1 << 1),
 };
 
-#endif // SMARTCASH_CONSENSUS_CONSENSUS_H
+#endif // smartcoin_CONSENSUS_CONSENSUS_H

@@ -46,7 +46,7 @@ ZerocoinPage::ZerocoinPage(const PlatformStyle *platformStyle, Mode mode, QWidge
             setWindowTitle(tr("Zerocoin"));
     }
     ui->labelExplanation->setText(
-            //tr("These are your private coins from the Renew SmartCash operation.  Select an amount to Renew and wait about 10 minutes before you select Reclaim.  You can increase anonymity waiting longer to reclaim and using more of the same amount.")
+            //tr("These are your private coins from the Renew smartcoin operation.  Select an amount to Renew and wait about 10 minutes before you select Reclaim.  You can increase anonymity waiting longer to reclaim and using more of the same amount.")
               tr("Renew and Reclaim Features are temporarily disabled.")
         );
     ui->zerocoinAmount->setVisible(true);

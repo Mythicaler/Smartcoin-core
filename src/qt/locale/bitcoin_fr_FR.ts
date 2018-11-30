@@ -166,8 +166,8 @@
         <translation>Réindexer les blocs sur le disque...</translation>
     </message>
     <message>
-        <source>Send coins to a Smartcash address</source>
-        <translation>Envoyer des pièces à une adresse SmartCash</translation>
+        <source>Send coins to a smartcoin address</source>
+        <translation>Envoyer des pièces à une adresse smartcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -190,8 +190,8 @@
         <translation>&amp;Vérification du message</translation>
     </message>
     <message>
-        <source>SmartCash</source>
-        <translation>SmartCash</translation>
+        <source>smartcoin</source>
+        <translation>smartcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -218,8 +218,8 @@
         <translation>Crypter les clé privées qui appartiennent votre portefeuille</translation>
     </message>
     <message>
-        <source>Sign messages with your Smartcash addresses to prove you own them</source>
-        <translation>Signer vos messages avec vos adresses Smartcash pour prouver que vous les détenez</translation>
+        <source>Sign messages with your smartcoin addresses to prove you own them</source>
+        <translation>Signer vos messages avec vos adresses smartcoin pour prouver que vous les détenez</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -238,24 +238,24 @@
         <translation>Barre d'outils des onglets</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and smartcash: URIs)</source>
-        <translation>Demander des paiements (générer QR codes et smartcash: URIs)</translation>
+        <source>Request payments (generates QR codes and smartcoin: URIs)</source>
+        <translation>Demander des paiements (générer QR codes et smartcoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Montrer la liste des adresses d'envois utilisées et les étiquettes</translation>
     </message>
     <message>
-        <source>Open a smartcash: URI or payment request</source>
-        <translation>Ouvrir un smartcash: URI ou demande de paiement</translation>
+        <source>Open a smartcoin: URI or payment request</source>
+        <translation>Ouvrir un smartcoin: URI ou demande de paiement</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Options de ligne de commande</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Smartcash network</source>
-        <translation><numerusform>%n connexion active au réseau SmartCash</numerusform><numerusform>%n connexions actives au réseau SmartCash</numerusform></translation>
+        <source>%n active connection(s) to smartcoin network</source>
+        <translation><numerusform>%n connexion active au réseau smartcoin</numerusform><numerusform>%n connexions actives au réseau smartcoin</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -617,8 +617,8 @@
         <translation>Expert</translation>
     </message>
     <message>
-        <source>Automatically open the Smartcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ouvrir le port du client Smartcash automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l'UPnP et si la fonctionnalité est activée.</translation>
+        <source>Automatically open the smartcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Ouvrir le port du client smartcoin automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l'UPnP et si la fonctionnalité est activée.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -781,8 +781,8 @@
         <translation>Montant</translation>
     </message>
     <message>
-        <source>Enter a Smartcash address (e.g. %1)</source>
-        <translation>Entrer une adresse Smartcash (e.g. %1)</translation>
+        <source>Enter a smartcoin address (e.g. %1)</source>
+        <translation>Entrer une adresse smartcoin (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1380,8 +1380,8 @@
         <translation>Impossible de démarrer le serveur HTTP. Voir le journal de débogage pour plus de détails.</translation>
     </message>
     <message>
-        <source>Smartcash Core</source>
-        <translation>Smartcash Core</translation>
+        <source>smartcoin Core</source>
+        <translation>smartcoin Core</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>

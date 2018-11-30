@@ -51,7 +51,7 @@
 using namespace std;
 
 #if defined(NDEBUG)
-# error "smartcash cannot be compiled without assertions."
+# error "smartcoin cannot be compiled without assertions."
 #endif
 
 #define ZEROCOIN_MODULUS   "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784406918290641249515082189298559149176184502808489120072844992687392807287776735971418347270261896375014971824691165077613379859095700097330459748808428401797429100642458691817195118746121515172654632282216869987549182422433637259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133844143603833904414952634432190114657544454178424020924616515723350778707749817125772467962926386356373289912154831438167899885040445364023527381951378636564391212010397122822120720357"
@@ -124,7 +124,7 @@ static void CheckBlockIndex(const Consensus::Params& consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "SmartCash Signed Message:\n";
+const string strMessageMagic = "smartcoin Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -2904,7 +2904,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("smartcash-scriptch");
+    RenameThread("smartcoin-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -3246,7 +3246,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
     int64_t nTime3 = GetTimeMicros(); nTimeConnect += nTime3 - nTime2;
     LogPrint("bench", "      - Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin) [%.2fs]\n", (unsigned)block.vtx.size(), 0.001 * (nTime3 - nTime2), 0.001 * (nTime3 - nTime2) / block.vtx.size(), nInputs <= 1 ? 0 : 0.001 * (nTime3 - nTime2) / (nInputs-1), nTimeConnect * 0.000001);
 
-    // SMARTCASH : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
+    // smartcoin : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
 
     // It's possible that we simply don't have enough data and this could fail
     // (i.e. block itself could be a correct one and we need to store it),
@@ -3257,15 +3257,15 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
     CAmount blockReward = nFees + GetBlockSubsidy(pindex->pprev->nHeight, chainparams.GetConsensus());
     // std::string strError = "";
     // if (!IsBlockValueValid(block, pindex->nHeight, blockReward, strError)) {
-    //     return state.DoS(0, error("ConnectBlock(SMARTCASH): %s", strError), REJECT_INVALID, "bad-cb-amount");
+    //     return state.DoS(0, error("ConnectBlock(smartcoin): %s", strError), REJECT_INVALID, "bad-cb-amount");
     // }
 
     if (!IsBlockPayeeValid(block.vtx[0], pindex->nHeight, blockReward)) {
         mapRejectedBlocks.insert(make_pair(block.GetHash(), GetTime()));
-        return state.DoS(0, error("ConnectBlock(SMARTCASH): couldn't find smartnode or superblock payments"),
+        return state.DoS(0, error("ConnectBlock(smartcoin): couldn't find smartnode or superblock payments"),
                                 REJECT_INVALID, "bad-cb-payee");
     }
-    // END SMARTCASH
+    // END smartcoin
 
     if (!control.Wait())
         return state.DoS(100, false);
@@ -7811,7 +7811,7 @@ std::string GetWarnings(const std::string& strFor)
 //                 }
 //             }
 //         }
-// 	// vInventoryToSend from smartcash
+// 	// vInventoryToSend from smartcoin
 //         {
 //             LOCK(pto->cs_inventory);
 //             vInv.reserve(std::min<size_t>(1000, pto->vInventoryToSend.size()));

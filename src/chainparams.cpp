@@ -56,7 +56,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, std::vector<unsigned char> extraNonce)
 {
-    const char* pszTimestamp = "SmartCash, Communinty Driven Cash";
+    const char* pszTimestamp = "smartcoin, Communinty Driven Cash";
     const CScript genesisOutputScript = CScript();
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward, extraNonce);
 }
@@ -152,12 +152,12 @@ public:
         vSeeds.push_back(CDNSSeedData("seed.smrt.cash", "seed.smrt.cash", false));        
         vSeeds.push_back(CDNSSeedData("seed1.smrt.cash", "seed1.smrt.cash", false));
         vSeeds.push_back(CDNSSeedData("seed2.smrt.cash", "seed2.smrt.cash", false));
-        vSeeds.push_back(CDNSSeedData("seed1.smartcash.org", "seed1.smartcash.org", false));
-        vSeeds.push_back(CDNSSeedData("seed2.smartcash.org", "seed2.smartcash.org", false));
-        vSeeds.push_back(CDNSSeedData("seed.smartcash.cc", "seed.smartcash.cc", false));
-        vSeeds.push_back(CDNSSeedData("seed2.smartcash.cc", "seed2.smartcash.cc", false));
-        vSeeds.push_back(CDNSSeedData("seed3.smartcash.cc", "seed3.smartcash.cc", false));
-        vSeeds.push_back(CDNSSeedData("seed4.smartcash.cc", "seed4.smartcash.cc", false));
+        vSeeds.push_back(CDNSSeedData("seed1.smartcoin.org", "seed1.smartcoin.org", false));
+        vSeeds.push_back(CDNSSeedData("seed2.smartcoin.org", "seed2.smartcoin.org", false));
+        vSeeds.push_back(CDNSSeedData("seed.smartcoin.cc", "seed.smartcoin.cc", false));
+        vSeeds.push_back(CDNSSeedData("seed2.smartcoin.cc", "seed2.smartcoin.cc", false));
+        vSeeds.push_back(CDNSSeedData("seed3.smartcoin.cc", "seed3.smartcoin.cc", false));
+        vSeeds.push_back(CDNSSeedData("seed4.smartcoin.cc", "seed4.smartcoin.cc", false));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,18);
@@ -165,7 +165,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        // Smartcash BIP44 coin type is '224'
+        // smartcoin BIP44 coin type is '224'
         nExtCoinType = 224;
         
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -256,7 +256,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("testnet.smartcash.cc", "testnet.smartcash.cc", true));
+        vSeeds.push_back(CDNSSeedData("testnet.smartcoin.cc", "testnet.smartcoin.cc", true));
         vSeeds.push_back(CDNSSeedData("testnet.smrt.cash", "testnet.smrt.cash", true));        
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
@@ -265,7 +265,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Smartcash BIP44 coin type is '224'
+        // smartcoin BIP44 coin type is '224'
         nExtCoinType = 224;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -363,7 +363,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Smartcash BIP44 coin type is '224'
+        // smartcoin BIP44 coin type is '224'
         nExtCoinType = 224;
     }
 

@@ -103,7 +103,7 @@
     </message>
     <message>
         <source>Show information about Qt</source>
-        <translation>Erakutsi SmartCash-i buruzko informazioa</translation>
+        <translation>Erakutsi smartcoin-i buruzko informazioa</translation>
     </message>
     <message>
         <source>&amp;Options...</source>
@@ -378,8 +378,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>SmartCash Core</source>
-        <translation>SmartCash Core</translation>
+        <source>smartcoin Core</source>
+        <translation>smartcoin Core</translation>
     </message>
     <message>
         <source>Rescanning...</source>

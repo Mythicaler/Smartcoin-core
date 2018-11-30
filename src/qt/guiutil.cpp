@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Smartcash Core developers
+// Copyright (c) 2014-2017 The smartcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -117,7 +117,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Smartcash address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a smartcoin address (e.g. %1)").arg(
         "SXun9XDHLdBhG4Yd1ueZfLfRpC9kZgwT1b"));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
@@ -135,8 +135,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no smartcash: URI
-    if(!uri.isValid() || uri.scheme() != QString("smartcash"))
+    // return if URI is not valid or is no smartcoin: URI
+    if(!uri.isValid() || uri.scheme() != QString("smartcoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -209,9 +209,9 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("smartcash://", Qt::CaseInsensitive))
+    if(uri.startsWith("smartcoin://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 12, "smartcash:");
+        uri.replace(0, 12, "smartcoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -219,7 +219,7 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("smartcash:%1").arg(info.address);
+    QString ret = QString("smartcoin:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
@@ -635,10 +635,10 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Smartcash.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "smartcoin.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Smartcash (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Smartcash (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "smartcoin (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("smartcoin (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -735,8 +735,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "smartcash.desktop";
-    return GetAutostartDir() / strprintf("smartcash-%s.lnk", chain);
+        return GetAutostartDir() / "smartcoin.desktop";
+    return GetAutostartDir() / strprintf("smartcoin-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -779,9 +779,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Smartcash\n";
+            optionFile << "Name=smartcoin\n";
         else
-            optionFile << strprintf("Name=Smartcash (%s)\n", chain);
+            optionFile << strprintf("Name=smartcoin (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -800,7 +800,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the Smartcash Core app
+    // loop through the list of startup items and try to find the smartcoin Core app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -845,7 +845,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add Smartcash Core app to startup item list
+        // add smartcoin Core app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {

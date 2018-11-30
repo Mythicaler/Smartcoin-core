@@ -1,32 +1,32 @@
-Smartcash Core 1.1.0
+smartcoin Core 1.1.0
 =====================
 
 Setup
 ---------------------
-[Smartcash Core](https://smartcash.cc/wallets/) is the original Smartcash client and it builds the backbone of the network. However, it downloads and stores the entire history of Smartcash transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+[smartcoin Core](https://smartcoin.cc/wallets/) is the original smartcoin client and it builds the backbone of the network. However, it downloads and stores the entire history of smartcoin transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Smartcash on your native platform.
+The following are some helpful notes on how to run smartcoin on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/smartcash-qt` (GUI) or
-- `bin/smartcashd` (headless)
+- `bin/smartcoin-qt` (GUI) or
+- `bin/smartcoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run smartcash-qt.exe.
+Unpack the files into a directory, and then run smartcoin-qt.exe.
 
 ### OS X
 
-Drag Smartcash-Core to your applications folder, and then run Smartcash-Core.
+Drag smartcoin-Core to your applications folder, and then run smartcoin-Core.
 
 Building
 ---------------------
-The following are developer notes on how to build Smartcash on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build smartcoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -36,7 +36,7 @@ The following are developer notes on how to build Smartcash on your native platf
 
 Development
 ---------------------
-The Smartcash repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The smartcoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

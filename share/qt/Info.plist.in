@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Smartcash-Qt</string>
+  <string>smartcoin-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Smartcash-Qt</string>
+  <string>smartcoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.bitcoinfoundation.Smartcash-Qt</string>
+  <string>org.bitcoinfoundation.smartcoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>

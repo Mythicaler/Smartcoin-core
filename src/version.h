@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef SMARTCASH_VERSION_H
-#define SMARTCASH_VERSION_H
+#ifndef smartcoin_VERSION_H
+#define smartcoin_VERSION_H
 
 /**
  * network protocol versioning

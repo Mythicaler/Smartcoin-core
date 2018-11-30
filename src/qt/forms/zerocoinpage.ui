@@ -64,10 +64,10 @@
      <item>
       <widget class="QPushButton" name="zerocoinMintButton">
        <property name="toolTip">
-        <string>Renew Smartcash</string>
+        <string>Renew smartcoin</string>
        </property>
        <property name="text">
-        <string>&amp;Renew Smartcash</string>
+        <string>&amp;Renew smartcoin</string>
        </property>
        <property name="icon">
         <iconset>
@@ -81,10 +81,10 @@
      <item>
       <widget class="QPushButton" name="zerocoinSpendButton">
        <property name="toolTip">
-        <string>Reclaim Smartcash</string>
+        <string>Reclaim smartcoin</string>
        </property>
        <property name="text">
-        <string>&amp;Reclaim Smartcash</string>
+        <string>&amp;Reclaim smartcoin</string>
        </property>
        <property name="icon">
         <iconset>

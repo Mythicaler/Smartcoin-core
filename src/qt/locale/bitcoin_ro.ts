@@ -142,7 +142,7 @@
         <translation>Deschide &amp;URI...</translation>
     </message>
     <message>
-        <source>Send coins to a Smartcash address</source>
+        <source>Send coins to a smartcoin address</source>
         <translation>Trimite monedele către o adresă Bitcoin</translation>
     </message>
     <message>
@@ -194,12 +194,12 @@
         <translation>Criptează cheile private care aparțin portofelului tău.</translation>
     </message>
     <message>
-        <source>Sign messages with your Smartcash addresses to prove you own them</source>
-        <translation>Semnează mesajele cu adresa ta de Smartcash pentru a face dovada că îți aparțin.</translation>
+        <source>Sign messages with your smartcoin addresses to prove you own them</source>
+        <translation>Semnează mesajele cu adresa ta de smartcoin pentru a face dovada că îți aparțin.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Smartcash addresses</source>
-        <translation>Verifică mesajele cu scopul de a asigura faptul că au fost semnate cu adresa de Smartcash specificată.</translation>
+        <source>Verify messages to ensure they were signed with specified smartcoin addresses</source>
+        <translation>Verifică mesajele cu scopul de a asigura faptul că au fost semnate cu adresa de smartcoin specificată.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -214,12 +214,12 @@
         <translation>&amp;Ajutor</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and smartcash: URIs)</source>
-        <translation>Cerere plată (generează coduri QR și smartcash: URIs)</translation>
+        <source>Request payments (generates QR codes and smartcoin: URIs)</source>
+        <translation>Cerere plată (generează coduri QR și smartcoin: URIs)</translation>
     </message>
     <message>
-        <source>Open a smartcash: URI or payment request</source>
-        <translation>Deschide un smartcash: URI sau cerere de plată</translation>
+        <source>Open a smartcoin: URI or payment request</source>
+        <translation>Deschide un smartcoin: URI sau cerere de plată</translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -746,8 +746,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Smartcash Core</source>
-        <translation>Smartcash Core</translation>
+        <source>smartcoin Core</source>
+        <translation>smartcoin Core</translation>
     </message>
     <message>
         <source>Information</source>

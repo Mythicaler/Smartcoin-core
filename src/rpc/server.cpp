@@ -255,11 +255,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Smartcash server.");
+            "\nStop smartcoin server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Smartcash server stopping";
+    return "smartcoin server stopping";
 }
 
 /**
@@ -271,12 +271,12 @@ static const CRPCCommand vRPCCommands[] =
     /* Overall control/query calls */
     { "control",            "help",                   &help,                   true  },
     { "control",            "stop",                   &stop,                   true  },
-    /* Smartcash features */ 
-    { "smartcash",          "smartnode",              &smartnode,              true  }, 
-    { "smartcash",          "snsync",                 &snsync,                 true  },
-    { "smartcash",          "smartnodelist",          &smartnodelist,          true  }, 
-    { "smartcash",          "smartnodebroadcast",     &smartnodebroadcast,     true  }, 
-    //{ "smartcash",          "getpoolinfo",            &getpoolinfo,            true  },
+    /* smartcoin features */ 
+    { "smartcoin",          "smartnode",              &smartnode,              true  }, 
+    { "smartcoin",          "snsync",                 &snsync,                 true  },
+    { "smartcoin",          "smartnodelist",          &smartnodelist,          true  }, 
+    { "smartcoin",          "smartnodebroadcast",     &smartnodebroadcast,     true  }, 
+    //{ "smartcoin",          "getpoolinfo",            &getpoolinfo,            true  },
 };
 
 CRPCTable::CRPCTable()
@@ -466,7 +466,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> smartcash-cli " + methodname + " " + args + "\n";
+    return "> smartcoin-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

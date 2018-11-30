@@ -142,7 +142,7 @@
         <translation>Reindexando bloques en disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Smartcash address</source>
+        <source>Send coins to a smartcoin address</source>
         <translation>Enviar monedas a una dirección Bitcoin</translation>
     </message>
     <message>
@@ -194,12 +194,12 @@
         <translation>Cifrar las claves privadas de su monedero</translation>
     </message>
     <message>
-        <source>Sign messages with your Smartcash addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones Smartcash para demostrar la propiedad</translation>
+        <source>Sign messages with your smartcoin addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones smartcoin para demostrar la propiedad</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Smartcash addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones Smartcash concretas</translation>
+        <source>Verify messages to ensure they were signed with specified smartcoin addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones smartcoin concretas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -218,7 +218,7 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and smartcash: URIs)</source>
+        <source>Request payments (generates QR codes and smartcoin: URIs)</source>
         <translation>Solicitar pagos (genera codigo QR y URL's de Bitcoin)</translation>
     </message>
     <message>
@@ -230,8 +230,8 @@
         <translation>Muestra la lista de direcciones de recepción y etiquetas</translation>
     </message>
     <message>
-        <source>Open a smartcash: URI or payment request</source>
-        <translation>Abrir un smartcash: URI o petición de pago</translation>
+        <source>Open a smartcoin: URI or payment request</source>
+        <translation>Abrir un smartcoin: URI o petición de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -495,8 +495,8 @@
         <translation>Experto</translation>
     </message>
     <message>
-        <source>Automatically open the Smartcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente Smartcash en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
+        <source>Automatically open the smartcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente smartcoin en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -590,8 +590,8 @@
         <translation>Desde</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Smartcash network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Smartcash después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the smartcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red smartcoin después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
@@ -1021,7 +1021,7 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Smartcash address</source>
+        <source>Sign the message to prove you own this smartcoin address</source>
         <translation>Firmar el mensaje para demostrar que se posee esta dirección Bitcoin</translation>
     </message>
     <message>
@@ -1041,8 +1041,8 @@
         <translation>&amp;Verificar mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Smartcash address</source>
-        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección Smartcash indicada</translation>
+        <source>Verify the message to ensure it was signed with the specified smartcoin address</source>
+        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección smartcoin indicada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1129,7 +1129,7 @@
         <translation>Aceptar conexiones desde el exterior (predeterminado: 1 si no -proxy o -connect)</translation>
     </message>
     <message>
-        <source>Smartcash Core</source>
+        <source>smartcoin Core</source>
         <translation>Núcleo de Bitcoin</translation>
     </message>
     <message>
